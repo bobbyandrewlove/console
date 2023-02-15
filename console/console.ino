@@ -8,23 +8,40 @@
 
 
 // Constants
-
+// Pin 0 for Color Mixer button.
+const int cmb = 0;
+// Pin 1 for Tic Tac Toe button.
+const int tttb = 1;
+// Pin 2 for Whack a Mole button.
+const int wamb = 2;
 
 // Variables
-// 0 = Idle State
-// 1 = Color Mixer
-// 2 = Tic Tac Toe
-// 3 = Whack a Mole
-int state = 0;
+int cm = 0;
+int ttt = 0;
+int wam = 0;
 
 // Setup Function
 void setup() {
-  // put your setup code here, to run once:
-
+  // Set the three game buttons as input.
+  pinMode(cmb, INPUT);
+  pinMode(tttb, INPUT);
+  pinMode(wamb, INPUT);
+  // For terminal diagnostic purposes.
+  Serial.begin(9600);
 }
 
 // Main Function
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  cm = digitalRead(cmb);
+  ttt = digitalRead(tttb);
+  wam = digitalRead(wamb);
+  if (cm) {
+    // ACTIVATE COLOR MIXER
+  } else if (ttt) {
+    // ACTIVATE TIC TAC TOE
+  } else if (wam) {
+    // ACTIVATE WHACK A MOLE
+  }
+  // Reset values for next iteration of loop.
+  cm = ttt = wam = 0;
 }
