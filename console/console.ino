@@ -11,7 +11,11 @@
 
 
 // Variables
-
+// 0 = Idle State
+// 1 = Color Mixer
+// 2 = Tic Tac Toe
+// 3 = Whack a Mole
+int state = 0;
 
 // Setup Function
 void setup() {
