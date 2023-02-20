@@ -7,6 +7,9 @@
 // Libraries
 
 
+// Prototypes
+int TicTacToeCheck(int[][3]);
+
 // Constants
 // Pin 0 for Color Mixer button.
 const int cmb = 0;
@@ -41,10 +44,63 @@ void loop() {
   // Tic Tac Toe
   } else if (ttt) {
     // TIC TAC TOE CODE
+    // Initialize all indices to 0.
+    int board[3][3] = {0};    
+    do {
+
+    } while (1);
   // Whack a Mole
   } else if (wam) {
     // WHACK A MOLE CODE
   }
   // Reset values for next iteration of loop.
   cm = ttt = wam = 0;
+}
+
+// Definitions
+int TicTacToeCheck(int board[][3]) {
+  // Check for all 8 Tic Tac Toe possibilities.
+  if (board[0][0] == board[0][1] == board[0][2]) {
+    if (board[0][0] != 0) {
+      // Return the value of the victor.
+      return board[0][0];
+    }
+  }
+  if (board[1][0] == board[1][1] == board[1][2]) {
+    if (board[1][0] != 0) {
+      return board[1][0];
+    }   
+  }
+  if (board[2][0] == board[2][1] == board[2][2]) {
+    if (board[2][0] != 0) {
+      return board[2][0];
+    }
+  }
+  if (board[0][0] == board[1][0] == board[2][0]) {
+    if (board[0][0] != 0) {
+      return board[0][1];
+    }    
+  }
+  if (board[0][1] == board[1][1] == board[2][1]) {
+    if (board[0][1] != 0) {
+      return board[0][1];
+    }    
+  }
+  if (board[0][2] == board[1][2] == board[2][2]) {
+    if (board[0][2] != 0) {
+      return board[0][1];
+    }    
+  }
+  if (board[0][0] == board[1][1] == board[2][2]) {
+    if (board[0][0] != 0) {
+      return board[0][0];
+    }
+  }
+  if (board[0][2] == board [1][1] == board[2][0]) {
+    if (board[0][2] != 0) {
+      return board[0][2];
+    }
+  }
+  // If no one has won yet, return 0.
+  return 0;
 }
