@@ -35,12 +35,15 @@ void loop() {
   cm = digitalRead(cmb);
   ttt = digitalRead(tttb);
   wam = digitalRead(wamb);
+  // Color Mixer
   if (cm) {
-    // ACTIVATE COLOR MIXER
+    // COLOR MIXER CODE
+  // Tic Tac Toe
   } else if (ttt) {
-    // ACTIVATE TIC TAC TOE
+    // TIC TAC TOE CODE
+  // Whack a Mole
   } else if (wam) {
-    // ACTIVATE WHACK A MOLE
+    // WHACK A MOLE CODE
   }
   // Reset values for next iteration of loop.
   cm = ttt = wam = 0;
