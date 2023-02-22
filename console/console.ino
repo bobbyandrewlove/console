@@ -7,8 +7,9 @@
 // Libraries
 
 
-// Prototypes
-int TicTacToeCheck(int[][3]);
+// Function Prototypes
+int newPieceCheck(int *[][3]);
+int ticTacToeCheck(int [][3]);
 
 // Constants
 // Pin 0 for Color Mixer button.
@@ -47,7 +48,7 @@ void loop() {
     // Initialize all indices to 0.
     int board[3][3] = {0};    
     do {
-
+      newPieceCheck()        
     } while (1);
   // Whack a Mole
   } else if (wam) {
@@ -57,8 +58,8 @@ void loop() {
   cm = ttt = wam = 0;
 }
 
-// Definitions
-int TicTacToeCheck(int board[][3]) {
+// Function Definitions
+int ticTacToeCheck(int board[][3]) {
   // Check for all 8 Tic Tac Toe possibilities.
   if (board[0][0] == board[0][1] == board[0][2]) {
     if (board[0][0] != 0) {
